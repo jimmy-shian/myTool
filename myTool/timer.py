@@ -74,5 +74,12 @@ def Tcount(*args, **kwargs):
     # 計算總秒數
     total_seconds = hours * 3600 + minutes * 60 + seconds
     
-    # 阻塞式暫停
-    time.sleep(total_seconds)
+    # 帶有倒數顯示的阻塞式暫停
+    for remaining in range(total_seconds, 0, -1):
+        hrs = remaining // 3600
+        mins = (remaining % 3600) // 60
+        secs = remaining % 60
+        timer_display = f"\r倒數計時：{hrs:02d}:{mins:02d}:{secs:02d} 剩餘"
+        print(timer_display, end="", flush=True)
+        time.sleep(1)
+    print("\n時間到！")

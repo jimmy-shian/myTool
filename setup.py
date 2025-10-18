@@ -5,7 +5,7 @@ with open("README.md", "r", encoding="utf-8") as fh:
 
 setup(
     name="myTool",
-    version="0.1.0",
+    version="0.1.1",
     author="jimmy",
     author_email="your.email@example.com",
     description="一個可自訂的計時器工具，包含增強列印功能",
